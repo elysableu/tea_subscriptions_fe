@@ -16,6 +16,7 @@ function DetailsPage({ details}) {
     return (
         <section className='details_container'>
             <h2>{details.data.attributes.title}</h2>
+            <h3>Subscription Details: </h3>
             <DetailsCard    price={details.data.attributes.price} 
                             status={details.data.attributes.status}
                             frequency={details.data.attributes.frequency} />

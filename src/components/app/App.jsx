@@ -44,7 +44,7 @@ function App() {
   return (
     <main>
       <Header />
-
+      
       <section className="content">
         <Routes>
           <Route path="/" element={<Homepage portalNav={ handlePortalNav } />} />
@@ -52,7 +52,6 @@ function App() {
           <Route path="/:subId" element={<DetailsPage details={details} />}/>
         </Routes>
       </section>
-      
     </main>
   )
 }
