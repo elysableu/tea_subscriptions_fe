@@ -1,8 +1,7 @@
 import './SubscriptionsPage.css';
-import {useEffect} from 'react';
 import SubscriptionCard from '../subscriptionCard/SubscriptionCard';
 
-function SubscriptionsPage({ subscriptions }) {
+function SubscriptionsPage({ subscriptions, getSubscriptionDetails }) {
     if(!subscriptions) {
         return(
             <h3>Loading...</h3>
@@ -19,6 +18,7 @@ function SubscriptionsPage({ subscriptions }) {
                 price={subscription.attributes.price}
                 status={subscription.attributes.status}
                 frequency={subscription.attributes.frequency}
+                getSubscriptionDetails={getSubscriptionDetails}
             />
         );
     })
