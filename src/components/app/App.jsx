@@ -22,6 +22,10 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    getSubscriptions();
+  }, []);
+
   const getSubscriptionDetails = (subId) => {
     fetch(`${baseURL}/api/v1/subscriptions/${subId}`)
     .then(response => {
@@ -33,10 +37,19 @@ function App() {
     })
   }
 
-  useEffect(() => {
-    getSubscriptions();
-  }, []);
+  const updateSubscriptionStatus = (status) => {
+    
+  }
 
+  const handleStatusChange = (status) => {
+    if (status === "active" )
+      updateSubscriptionStatus("canceled");
+    else if (status === "canceled") {
+      updateSubscriptionStatus("active");
+    }
+  }
+
+  
   const handlePortalNav = () => {
     navigate('/subscriptions')
   }
@@ -44,12 +57,12 @@ function App() {
   return (
     <main>
       <Header />
-      
+
       <section className="content">
         <Routes>
           <Route path="/" element={<Homepage portalNav={ handlePortalNav } />} />
           <Route path="/subscriptions" element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} />} />
-          <Route path="/:subId" element={<DetailsPage details={details} />}/>
+          <Route path="/:subId" element={<DetailsPage details={details} handleStatusChange={handleStatusChange}/>}/>
         </Routes>
       </section>
     </main>
