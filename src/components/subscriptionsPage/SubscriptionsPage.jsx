@@ -8,7 +8,6 @@ function SubscriptionsPage({ subscriptions, getSubscriptionDetails }) {
         );
     }
 
-    console.log("in container:",subscriptions);
     const subscriptionCards = subscriptions.data.map((subscription) => {
         return (
             <SubscriptionCard 

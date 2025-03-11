@@ -4,7 +4,7 @@ import TeasContainer from '../teasContainer/TeasContainer'
 import CustomersContainer from '../customersContainer/CustomersContainer'
 
 function DetailsPage({ details}) {
-    console.log(details)
+
    const teas = details.included.filter((entry) => {
     return entry.type === "tea"
    })
