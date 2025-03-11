@@ -5,7 +5,7 @@ function SubscriptionCard({ id, title, price, status, frequency, getSubscription
         <section className="subscription_card_container" onClick={() => getSubscriptionDetails(id)}>
             <h3>{ title }</h3>
             <p>Price per Box: ${ price }</p>
-            <p>Delivered: { frequency }</p>
+            <p>Delivered { frequency }</p>
             <p>Status: { status }</p>
         </section>
     );

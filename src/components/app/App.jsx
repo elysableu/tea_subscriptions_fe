@@ -18,7 +18,6 @@ function App() {
     .then(response => {
      return response.json()})
     .then(data => {
-      console.log(data)
       setSubscriptions(data);
     })
   }
