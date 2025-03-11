@@ -26,7 +26,6 @@ function App() {
   const getSubscriptionDetails = (subId) => {
     fetch(`${baseURL}/api/v1/subscriptions/${subId}`)
     .then(response => {
-      console.log(response)
       return response.json()
     })
     .then(data => {
