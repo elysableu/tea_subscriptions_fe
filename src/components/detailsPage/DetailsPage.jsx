@@ -13,9 +13,6 @@ function DetailsPage({ details}) {
     return entry.type === "customer"
    })
 
-    console.log("teas: ", teas);
-    console.log("customers: ", customers)
-
     return (
         <section className='details_container'>
             <h2>{details.data.attributes.title}</h2>
