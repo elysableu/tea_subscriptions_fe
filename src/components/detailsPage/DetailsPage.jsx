@@ -6,7 +6,11 @@ import BackArrow from '../../assets/curved-arrow-back-icon.svg';
 import Cancel from '../../assets/remove-file-icon.svg';
 import Activate from '../../assets/add-file-icon.svg'
 
-function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
+function DetailsPage({  details, 
+                        handleStatusChange, 
+                        handlePortalNav,
+                        successMessage,
+                        statusError }) {
    
     const detailsData = details.data.attributes;
     const teas = details.included.filter((entry) => {
@@ -40,6 +44,12 @@ function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
             </div>
             <div className="nav-buttons">
                 <button className="goBack" onClick={() => handlePortalNav()}><img className="back_arrow" src={BackArrow} alt="Back Arrow" /><label>Go back</label></button>
+                {(statusError === "" && successMessage) && (
+                    <p className="success-message">{successMessage}</p> 
+                )}
+                {statusError && (
+                    <p className="error-status">{statusError}</p>
+                )}
                 <button className="setStatus" onClick={() => {handleStatusChange(detailsData.status, detailsData.id)}}><label>Cancel</label><img className="cancel" src={Cancel} alt="cancel subscription" /></button>
             </div>
         </section>
