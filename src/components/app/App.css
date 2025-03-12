@@ -1,10 +1,44 @@
+*{
+  --black: #020701ff;
+  --sage: #B3B299ff;
+  --dark-green: #213B33ff;
+  --powder-blue: #A8B0C5ff;
+  --amaranth-purple: #A92E4Dff;
+  --lowOp_black: rgba(2, 7, 0, 0.5);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  background-image: url('/ahtziri-lagarde-teS6J7wO6Og-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  overflow: auto;
 }
 
 main {
   color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lowOp_black);
+}
+
+.content {
+  z-index: 6;
+  width: fit-content;
 }

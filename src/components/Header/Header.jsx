@@ -4,10 +4,10 @@ import './Header.css';
 
 function Header() {
     return (
-        <section className="header_contianer">
+        <section className="header_container">
             <header>
                 <h1>Bloom & Brew</h1>
-                <Link to="/"><img src={Logo} alt="Bloom & Brew Logo"/></Link>
+                <Link className="link" to="/"><img className="logo" src={Logo} alt="Bloom & Brew Logo"/></Link>
             </header>
         </section>
     );

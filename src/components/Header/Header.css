@@ -1,0 +1,36 @@
+.header_container {
+    background-color: var(--sage);
+    width: 100%;
+    position: fixed;
+    top: 0em;
+    z-index: 5;
+}
+
+header {
+    height: 10em;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 2em;
+}
+
+.link {
+    width: 10em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 10em;
+    height: 10em;
+}
+
+.logo:hover {
+    border-radius: 15em;
+    border: 1px solid black;
+}
