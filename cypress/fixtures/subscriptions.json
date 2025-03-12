@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "title": "Around the World",
+                "price": "24.99",
+                "status": "active",
+                "frequency": "every two months"
+            },
+            "relationships": {}
+        },
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "title": "Afternoon tea time",
+                "price": "14.99",
+                "status": "active",
+                "frequency": "every month"
+            },
+            "relationships": {}
+        }
+    ]
+}

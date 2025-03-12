@@ -81,14 +81,14 @@ function App() {
   // Clear success and status messages after 3 seconds
   useEffect(() => {
     if (statusError) {
-      const errorTimer = setTimeout(() => setStatusError(""), 3000);
+      const errorTimer = setTimeout(() => setStatusError(""), 5000);
       return () => clearTimeout(errorTimer);
     }
   }, [statusError]);
 
   useEffect(() => {
     if (successMessage) {
-      const successTimer = setTimeout(() => setSuccessMessage(""), 3000);
+      const successTimer = setTimeout(() => setSuccessMessage(""), 5000);
       return () => clearTimeout(successTimer);
     }
   }, [successMessage]);

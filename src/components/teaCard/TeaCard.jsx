@@ -3,7 +3,7 @@ import './TeaCard.css';
 function TeaCard({ id, title, description, temperature, brew_time }) {
 
     return (
-        <section className="tea_card_container">
+        <section className="tea_card">
             <h4>{title}</h4>
             <div className="tea_info"> 
                 <p>{description}</p>

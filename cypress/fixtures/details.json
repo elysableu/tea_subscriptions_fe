@@ -1,0 +1,100 @@
+{
+    "data": {
+        "id": "1",
+        "type": "subscription",
+        "attributes": {
+            "id": 1,
+            "title": "Afternoon tea time",
+            "price": "14.99",
+            "status": "active",
+            "frequency": "every month"
+        },
+        "relationships": {
+            "teas": {
+                "data": [
+                    {
+                        "id": "1",
+                        "type": "tea"
+                    },
+                    {
+                        "id": "5",
+                        "type": "tea"
+                    },
+                    {
+                        "id": "6",
+                        "type": "tea"
+                    }
+                ]
+            },
+            "customers": {
+                "data": [
+                    {
+                        "id": "1",
+                        "type": "customer"
+                    },
+                    {
+                        "id": "2",
+                        "type": "customer"
+                    }
+                ]
+            }
+        }
+    },
+    "included": [
+        {
+            "id": "1",
+            "type": "tea",
+            "attributes": {
+                "id": 1,
+                "title": "Lady Grey",
+                "description": "Earl grey tea with vanilla and lavender",
+                "temperature": "200.0",
+                "brew_time": "3-5 minutes"
+            }
+        },
+        {
+            "id": "5",
+            "type": "tea",
+            "attributes": {
+                "id": 5,
+                "title": "English Garden",
+                "description": "Rose petal black tea",
+                "temperature": "200.0",
+                "brew_time": "3-5 minutes"
+            }
+        },
+        {
+            "id": "6",
+            "type": "tea",
+            "attributes": {
+                "id": 6,
+                "title": "Velvet Truffle",
+                "description": "Black tea with raspberry and dark chocolate",
+                "temperature": "200.0",
+                "brew_time": "3-5 minutes"
+            }
+        },
+        {
+            "id": "1",
+            "type": "customer",
+            "attributes": {
+                "id": 1,
+                "first_name": "Beatrice",
+                "last_name": "Sipwell",
+                "email": "sipwell12@gmail.com",
+                "address": "88 Camellia Drive"
+            }
+        },
+        {
+            "id": "2",
+            "type": "customer",
+            "attributes": {
+                "id": 2,
+                "first_name": "Theo",
+                "last_name": "Brewster",
+                "email": "tBrew98@gmail.com",
+                "address": "222 Jasmine Circle"
+            }
+        }
+    ]
+}
