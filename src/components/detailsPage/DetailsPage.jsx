@@ -3,7 +3,8 @@ import DetailsCard from '../detailsCard/DetailsCard'
 import TeasContainer from '../teasContainer/TeasContainer'
 import CustomersContainer from '../customersContainer/CustomersContainer'
 import BackArrow from '../../assets/curved-arrow-back-icon.svg';
-import Cancel from '../../assets/no-data-icon.svg';
+import Cancel from '../../assets/remove-file-icon.svg';
+import Activate from '../../assets/add-file-icon.svg'
 
 function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
    
