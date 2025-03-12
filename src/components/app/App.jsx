@@ -54,11 +54,13 @@ function App() {
     })
     .then(data => {
       getSubscriptions()
+      getSubscriptionDetails(id)
     })
     .catch(error => console.log(error.message))
   }
 
   const handleStatusChange = (status, id) => {
+    // This is set up to handle future implementation of a reactivate behavior
     if (status === "active" )
       updateSubscriptionStatus("canceled", id);
     else if (status === "canceled") {
