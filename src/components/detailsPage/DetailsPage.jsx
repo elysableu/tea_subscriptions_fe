@@ -35,7 +35,7 @@ function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
             </div>
             <div className="teas_customers_container">
                 <TeasContainer teas={sortedTeas}/>
-                <CustomersContainer customers={customers}/>
+                <CustomersContainer customers={sortedCustomers}/>
             </div>
             <div className="nav-buttons">
                 <button className="goBack" onClick={() => handlePortalNav()}><img className="back_arrow" src={BackArrow} alt="Back Arrow" /><label>Go back</label></button>

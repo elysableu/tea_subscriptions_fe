@@ -8,7 +8,11 @@ function SubscriptionsPage({ subscriptions, getSubscriptionDetails }) {
         );
     }
 
-    const subscriptionCards = subscriptions.data.map((subscription) => {
+    const sortedSubscriptions = subscriptions.data.sort((a, b) => {
+        return a.attributes.title.toLowerCase().localeCompare(b.attributes.title.toLowerCase())
+    })
+
+    const subscriptionCards = sortedSubscriptions.map((subscription) => {
         return (
             <SubscriptionCard 
                 key={subscription.id}
