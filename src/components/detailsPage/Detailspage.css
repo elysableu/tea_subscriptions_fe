@@ -92,5 +92,19 @@
     max-height: 2em;
 }
 
+.success-message {
+    color: var(--dark-green);
+}
 
+.error-status {
+    color: var(--amaranth-purple);
+}
+
+.success-message, .error-status {
+    background-color: var(--lowOp_blue);
+    font-weight: bold;
+    margin: 0;
+    border-radius: 1em;
+    padding: 0em 0.1em;
+}
 
