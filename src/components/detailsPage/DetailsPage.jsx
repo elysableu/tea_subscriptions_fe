@@ -6,15 +6,23 @@ import BackArrow from '../../assets/curved-arrow-back-icon.svg';
 import Cancel from '../../assets/no-data-icon.svg';
 
 function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
-    console.log(BackArrow);
+   
     const detailsData = details.data.attributes;
     const teas = details.included.filter((entry) => {
         return entry.type === "tea"
     });
 
+    const sortedTeas = teas.sort((a, b) => {
+        return a.attributes.title.toLowerCase().localeCompare(b.attributes.title.toLowerCase())
+    })
+
     const customers = details.included.filter((entry) => {
         return entry.type === "customer"
     });
+
+    const sortedCustomers = customers.sort((a, b) => {
+        return a.attributes.last_name.toLowerCase().localeCompare(b.attributes.last_name.toLowerCase())
+    })
 
     return (
         <section className='details_container'>
@@ -26,7 +34,7 @@ function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
                                 frequency={detailsData.frequency} />
             </div>
             <div className="teas_customers_container">
-                <TeasContainer teas={teas}/>
+                <TeasContainer teas={sortedTeas}/>
                 <CustomersContainer customers={customers}/>
             </div>
             <div className="nav-buttons">

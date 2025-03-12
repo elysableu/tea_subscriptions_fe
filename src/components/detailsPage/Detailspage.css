@@ -13,7 +13,7 @@
 .details_container h2 {
     text-decoration: underline;
     position: absolute;
-    left: 2em;
+    left: 1.5em;
     top: 70%;
     transform: rotate(-90deg) translate(-50%, -100%);
     transform-origin: left top;
@@ -73,7 +73,7 @@
 }
 
 .setStatus {
-    margin-right: 3em;
+    margin-right: 1em;
 }
 
 .nav-buttons button label {
