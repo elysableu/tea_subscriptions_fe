@@ -39,5 +39,10 @@ describe('subscriptionsPage', () => {
       cy.get('.subscription_card_container').last().find('p').eq(1).should('contain', 'Delivered every two months')
       cy.get('.subscription_card_container').last().find('p').eq(2).should('contain', 'Status: ')
     })
+
+    it('navigates back to homepage when logo is clicked', () => {
+      cy.get('.logo').click()
+      cy.get('.homepage_container').should('exist')
+    })
   })
 })

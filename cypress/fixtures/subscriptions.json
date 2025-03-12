@@ -6,7 +6,7 @@
             "attributes": {
                 "title": "Around the World",
                 "price": "24.99",
-                "status": "canceled",
+                "status": "active",
                 "frequency": "every two months"
             },
             "relationships": {}
@@ -17,7 +17,7 @@
             "attributes": {
                 "title": "Afternoon tea time",
                 "price": "14.99",
-                "status": "canceled",
+                "status": "active",
                 "frequency": "every month"
             },
             "relationships": {}
