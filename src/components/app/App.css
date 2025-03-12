@@ -6,6 +6,7 @@
   --powder-blue: #A8B0C5ff;
   --amaranth-purple: #A92E4Dff;
   --lowOp_black: rgba(2, 7, 0, 0.6);
+  --lowOp_blue: rgba(167, 176, 197, 0.6);
 
   /* Background gradient */
   --blue-sage: radial-gradient(circle, #a8b0c5, #98b5c2, #94b7b5, #a0b6a4, #b3b299);

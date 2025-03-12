@@ -17,7 +17,9 @@ function TeasContainer({ teas }) {
     return (
         <section className='tea_card_container'>
             <h3>Teas: </h3>
-            {teaCards}
+            <div className="card-scroll">
+                {teaCards}
+            </div>
         </section>
         
     );
