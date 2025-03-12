@@ -1,10 +1,15 @@
 *{
+  /* Color Palette */
   --black: #020701ff;
   --sage: #B3B299ff;
   --dark-green: #213B33ff;
   --powder-blue: #A8B0C5ff;
   --amaranth-purple: #A92E4Dff;
-  --lowOp_black: rgba(2, 7, 0, 0.5);
+  --lowOp_black: rgba(2, 7, 0, 0.6);
+
+  /* Fonts */
+  --abril: "Abril Fatface", serif;
+  --nunito: "Nunito", sans-serif;
 }
 
 body {
@@ -26,10 +31,11 @@ body {
   background-attachment: fixed;
   z-index: 0;
   overflow: auto;
+  font-family: var(--nunito);
 }
 
 main {
-  color: white;
+  color: var(--black);
   width: 100%;
   height: 100vh;
   display: flex;
