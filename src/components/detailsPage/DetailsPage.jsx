@@ -3,18 +3,31 @@ import DetailsCard from '../detailsCard/DetailsCard'
 import TeasContainer from '../teasContainer/TeasContainer'
 import CustomersContainer from '../customersContainer/CustomersContainer'
 import BackArrow from '../../assets/curved-arrow-back-icon.svg';
-import Cancel from '../../assets/no-data-icon.svg';
+import Cancel from '../../assets/remove-file-icon.svg';
+import Activate from '../../assets/add-file-icon.svg'
 
-function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
-    console.log(BackArrow);
+function DetailsPage({  details, 
+                        handleStatusChange, 
+                        handlePortalNav,
+                        successMessage,
+                        statusError }) {
+   
     const detailsData = details.data.attributes;
     const teas = details.included.filter((entry) => {
         return entry.type === "tea"
     });
 
+    const sortedTeas = teas.sort((a, b) => {
+        return a.attributes.title.toLowerCase().localeCompare(b.attributes.title.toLowerCase())
+    })
+
     const customers = details.included.filter((entry) => {
         return entry.type === "customer"
     });
+
+    const sortedCustomers = customers.sort((a, b) => {
+        return a.attributes.last_name.toLowerCase().localeCompare(b.attributes.last_name.toLowerCase())
+    })
 
     return (
         <section className='details_container'>
@@ -26,11 +39,17 @@ function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
                                 frequency={detailsData.frequency} />
             </div>
             <div className="teas_customers_container">
-                <TeasContainer teas={teas}/>
-                <CustomersContainer customers={customers}/>
+                <TeasContainer teas={sortedTeas}/>
+                <CustomersContainer customers={sortedCustomers}/>
             </div>
             <div className="nav-buttons">
                 <button className="goBack" onClick={() => handlePortalNav()}><img className="back_arrow" src={BackArrow} alt="Back Arrow" /><label>Go back</label></button>
+                {(statusError === "" && successMessage) && (
+                    <p className="success-message">{successMessage}</p> 
+                )}
+                {statusError && (
+                    <p className="error-status">{statusError}</p>
+                )}
                 <button className="setStatus" onClick={() => {handleStatusChange(detailsData.status, detailsData.id)}}><label>Cancel</label><img className="cancel" src={Cancel} alt="cancel subscription" /></button>
             </div>
         </section>

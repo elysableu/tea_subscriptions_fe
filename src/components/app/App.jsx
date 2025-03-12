@@ -12,6 +12,8 @@ function App() {
   const navigate = useNavigate();
   const [subscriptions, setSubscriptions] = useState(null);
   const [details, setDetails] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [statusError, setStatusError] = useState("");
   
   const getSubscriptions = () => {
     fetch(`${baseURL}/api/v1/subscriptions`)
@@ -50,15 +52,21 @@ function App() {
       body: JSON.stringify(newStatus),
     })
     .then(response => {
+      response.status === 400 ? setStatusError("Subscription is already canceled!") : setStatusError("");
       return response.json();
     })
     .then(data => {
       getSubscriptions()
+      getSubscriptionDetails(id)
+      status === "canceled" ? setSuccessMessage("Subscription successfully canceled!") : setSuccessMessage("Subscription successfully reactivated!")
     })
-    .catch(error => console.log(error.message))
+    .catch(error => {
+      console.log(error.message);
+    })
   }
 
   const handleStatusChange = (status, id) => {
+    // This is set up to handle future implementation of a reactivate behavior
     if (status === "active" )
       updateSubscriptionStatus("canceled", id);
     else if (status === "canceled") {
@@ -70,15 +78,37 @@ function App() {
     navigate('/subscriptions')
   }
 
+  // Clear success and status messages after 3 seconds
+  useEffect(() => {
+    if (statusError) {
+      const errorTimer = setTimeout(() => setStatusError(""), 3000);
+      return () => clearTimeout(errorTimer);
+    }
+  }, [statusError]);
+
+  useEffect(() => {
+    if (successMessage) {
+      const successTimer = setTimeout(() => setSuccessMessage(""), 3000);
+      return () => clearTimeout(successTimer);
+    }
+  }, [successMessage]);
+
   return (
     <main>
       <Header />
 
       <section className="content">
         <Routes>
-          <Route path="/" element={<Homepage portalNav={ handlePortalNav } />} />
-          <Route path="/subscriptions" element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} />} />
-          <Route path="/:subId" element={<DetailsPage details={details} handleStatusChange={handleStatusChange} handlePortalNav={handlePortalNav}/>}/>
+          <Route path="/" 
+                element={<Homepage portalNav={ handlePortalNav } />} />
+          <Route path="/subscriptions" 
+                element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} />} />
+          <Route path="/:subId" 
+                element={<DetailsPage details={details} 
+                                      handleStatusChange={handleStatusChange} 
+                                      handlePortalNav={handlePortalNav}
+                                      statusError={statusError}
+                                      successMessage={successMessage}/>}/>
         </Routes>
       </section>
     </main>
