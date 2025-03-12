@@ -1,10 +1,62 @@
+*{
+  /* Color Palette */
+  --black: #020701ff;
+  --sage: #B3B299ff;
+  --dark-green: #213B33ff;
+  --powder-blue: #A8B0C5ff;
+  --amaranth-purple: #A92E4Dff;
+  --lowOp_black: rgba(2, 7, 0, 0.6);
+  --lowOp_blue: rgba(167, 176, 197, 0.6);
+
+  /* Background gradient */
+  --blue-sage: radial-gradient(circle, #a8b0c5, #98b5c2, #94b7b5, #a0b6a4, #b3b299);
+  --sage-blue: radial-gradient(circle, #b3b299, #a0b6a4, #94b7b5, #98b5c2, #a8b0c5);
+
+  /* Fonts */
+  --abril: "Abril Fatface", serif;
+  --nunito: "Nunito", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  background-image: url('/ahtziri-lagarde-teS6J7wO6Og-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  overflow: auto;
+  font-family: var(--nunito);
 }
 
 main {
-  color: white;
+  color: var(--black);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lowOp_black);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+  overflow: auto;
+}
+
+.content {
+  z-index: 6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

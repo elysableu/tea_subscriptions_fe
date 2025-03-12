@@ -17,7 +17,9 @@ function CustomersContainer({ customers }) {
     return (
         <section className='customer_card_container'>
             <h3>Subscribed Customers: </h3>
-            {customerCards}
+            <div className="card-scroll">
+                {customerCards}
+            </div>
         </section>
         
     );

@@ -1,0 +1,40 @@
+.header_container {
+    background-color: var(--sage);
+    width: 100%;
+    position: fixed;
+    top: 0em;
+    z-index: 10;
+}
+
+header {
+    height: 10em;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 2em;
+    font-size: 4em;
+    font-family: var(--abril);
+}
+
+.link {
+    width: 9em;
+    height: 9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--blue-sage);
+    border-radius: 10em;
+    margin-left: 1em;
+}
+
+.link:hover {
+    background-image: var(--sage-blue);
+}
+
+.logo {
+    width: 9em;
+    height: 9em;
+}

@@ -1,0 +1,19 @@
+.homepage-container {
+    color: var(--powder-blue);
+
+}
+
+.homepage-container h2 {
+    font-size: 3em;
+}
+
+.homepage-container button {
+    color: var(--powder-blue);
+    background-color: var(--amaranth-purple);
+    border: none;
+}
+
+.homepage-container button:hover {
+    background-color: var(--dark-green);
+    border: none;
+}

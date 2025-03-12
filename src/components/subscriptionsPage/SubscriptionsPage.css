@@ -1,0 +1,21 @@
+.subscriptions_container {
+    width: 60%;
+    color: var(--powder-blue);
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscriptions_container h2 {
+    text-decoration: underline;
+    position: absolute;
+    left: 2em;
+    top: 75%;
+    transform: rotate(-90deg) translate(-50%, -100%);
+    transform-origin: left top;
+    font-size: 3rem;
+    white-space: nowrap;
+    color: var(--powder-blue);
+}

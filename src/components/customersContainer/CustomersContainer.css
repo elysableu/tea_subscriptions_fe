@@ -1,0 +1,32 @@
+.customer_card_container {
+    background-color: var(--lowOp_blue);
+    border-radius: 1em;
+    margin-right: 1em;
+    max-height: 20em;
+}
+
+.customer_card_container h3 {
+    margin-bottom: 0.5em;
+}
+
+.card-scroll {
+    overflow-y: auto;
+    max-height: 15em;
+    margin-right: 0.3em;
+    border-radius: 1em;
+    padding-left: 1.5em;
+}
+
+.card-scroll::-webkit-scrollbar {
+    width: 0.5em;
+    margin-left: 0.5em;
+}
+
+.card-scroll::-webkit-scrollbar-thumb {
+    border-radius: 0.7em;
+    background-color: var(--lowOp_blue);
+}
+
+.card-scroll::-webkit-scrollbar-track {
+    margin-left: 0.5em;
+}
