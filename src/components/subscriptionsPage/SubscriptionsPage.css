@@ -1,0 +1,14 @@
+.subscriptions_container {
+    width: 60%;
+    color: var(--powder-blue);
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscriptions_container h2 {
+    font-size: 2em;
+    text-decoration: underline;
+}

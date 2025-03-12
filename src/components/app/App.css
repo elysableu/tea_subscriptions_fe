@@ -7,6 +7,10 @@
   --amaranth-purple: #A92E4Dff;
   --lowOp_black: rgba(2, 7, 0, 0.6);
 
+  /* Background gradient */
+  --blue-sage: radial-gradient(circle, #a8b0c5, #98b5c2, #94b7b5, #a0b6a4, #b3b299);
+  --sage-blue: radial-gradient(circle, #b3b299, #a0b6a4, #94b7b5, #98b5c2, #a8b0c5);
+
   /* Fonts */
   --abril: "Abril Fatface", serif;
   --nunito: "Nunito", sans-serif;
@@ -42,9 +46,16 @@ main {
   justify-content: center;
   align-items: center;
   background: var(--lowOp_black);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+  overflow: auto;
 }
 
 .content {
   z-index: 6;
-  width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

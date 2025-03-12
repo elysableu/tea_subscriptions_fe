@@ -1,0 +1,19 @@
+.subscription_card_container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--powder-blue);
+    color: var(--black);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.subscription_card_container:hover {
+    cursor: pointer;
+}
+
+.sub_card_info {
+
+}
