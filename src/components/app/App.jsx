@@ -20,6 +20,7 @@ function App() {
     .then(data => {
       setSubscriptions(data);
     })
+    .catch(error => console.log(error.message))
   }
 
   useEffect(() => {
@@ -35,21 +36,36 @@ function App() {
       setDetails(data);
       navigate(`/${subId}`)
     })
+    .catch(error => console.log(error.message))
   }
 
-  const updateSubscriptionStatus = (status) => {
-    
+  const updateSubscriptionStatus = (status, id) => {
+    const newStatus = {subscription: {status: status}}
+   
+    fetch(`${baseURL}/api/v1/subscriptions/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newStatus),
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      getSubscriptions()
+    })
+    .catch(error => console.log(error.message))
   }
 
-  const handleStatusChange = (status) => {
+  const handleStatusChange = (status, id) => {
     if (status === "active" )
-      updateSubscriptionStatus("canceled");
+      updateSubscriptionStatus("canceled", id);
     else if (status === "canceled") {
-      updateSubscriptionStatus("active");
+      updateSubscriptionStatus("active", id);
     }
   }
 
-  
   const handlePortalNav = () => {
     navigate('/subscriptions')
   }

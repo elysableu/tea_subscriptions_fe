@@ -6,7 +6,6 @@ import CustomersContainer from '../customersContainer/CustomersContainer'
 function DetailsPage({ details, handleStatusChange }) {
 
     const detailsData = details.data.attributes;
-
     const teas = details.included.filter((entry) => {
         return entry.type === "tea"
     });
@@ -28,7 +27,7 @@ function DetailsPage({ details, handleStatusChange }) {
             </div>
             <div className="nav-buttons">
                 <button className="goBack"></button>
-                <button className="setStatus" onClick={() => {handleStatusChange(detailsData.status)}}></button>
+                <button className="setStatus" onClick={() => {handleStatusChange(detailsData.status, detailsData.id)}}></button>
             </div>
         </section>
     );
