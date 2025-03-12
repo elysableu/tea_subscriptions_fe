@@ -78,7 +78,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage portalNav={ handlePortalNav } />} />
           <Route path="/subscriptions" element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} />} />
-          <Route path="/:subId" element={<DetailsPage details={details} handleStatusChange={handleStatusChange}/>}/>
+          <Route path="/:subId" element={<DetailsPage details={details} handleStatusChange={handleStatusChange} handlePortalNav={handlePortalNav}/>}/>
         </Routes>
       </section>
     </main>

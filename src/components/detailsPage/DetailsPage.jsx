@@ -3,7 +3,7 @@ import DetailsCard from '../detailsCard/DetailsCard'
 import TeasContainer from '../teasContainer/TeasContainer'
 import CustomersContainer from '../customersContainer/CustomersContainer'
 
-function DetailsPage({ details, handleStatusChange }) {
+function DetailsPage({ details, handleStatusChange, handlePortalNav }) {
 
     const detailsData = details.data.attributes;
     const teas = details.included.filter((entry) => {
@@ -26,7 +26,7 @@ function DetailsPage({ details, handleStatusChange }) {
                 <CustomersContainer customers={customers}/>
             </div>
             <div className="nav-buttons">
-                <button className="goBack"></button>
+                <button className="goBack" onClick={() => handlePortalNav()}></button>
                 <button className="setStatus" onClick={() => {handleStatusChange(detailsData.status, detailsData.id)}}></button>
             </div>
         </section>
