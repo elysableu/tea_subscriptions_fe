@@ -8,6 +8,18 @@
     align-items: center;
 }
 
+.subscriptions_container button {
+    color: var(--powder-blue);
+    background-color: var(--amaranth-purple);
+    position: absolute;
+    right: 8em;
+    top: 12em;
+}
+
+.sort:hover {
+    outline: 2px solid var(--powder-blue);
+}
+
 .subscriptions_container h2 {
     text-decoration: underline;
     position: absolute;

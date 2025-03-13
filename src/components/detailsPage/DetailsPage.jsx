@@ -9,26 +9,20 @@ import Activate from '../../assets/add-file-icon.svg'
 function DetailsPage({  details, 
                         handleStatusChange, 
                         handlePortalNav,
+                        handleSort,
                         successMessage,
                         statusError }) {
    
     const detailsData = details.data.attributes;
+
     const teas = details.included.filter((entry) => {
         return entry.type === "tea"
     });
 
-    const sortedTeas = teas.sort((a, b) => {
-        return a.attributes.title.toLowerCase().localeCompare(b.attributes.title.toLowerCase())
-    })
-
     const customers = details.included.filter((entry) => {
         return entry.type === "customer"
     });
-
-    const sortedCustomers = customers.sort((a, b) => {
-        return a.attributes.last_name.toLowerCase().localeCompare(b.attributes.last_name.toLowerCase())
-    })
-
+    console.log(successMessage)
     return (
         <section className='details_container'>
             <h2>{details.data.attributes.title}</h2>
@@ -39,8 +33,8 @@ function DetailsPage({  details,
                                 frequency={detailsData.frequency} />
             </div>
             <div className="teas_customers_container">
-                <TeasContainer teas={sortedTeas}/>
-                <CustomersContainer customers={sortedCustomers}/>
+                <TeasContainer teas={teas} sort={handleSort}/>
+                <CustomersContainer customers={customers} sort={handleSort}/>
             </div>
             <div className="nav-buttons">
                 <button className="goBack" onClick={() => handlePortalNav()}><img className="back_arrow" src={BackArrow} alt="Back Arrow" /><label>Go back</label></button>
