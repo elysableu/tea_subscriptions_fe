@@ -13,21 +13,32 @@ function DetailsPage({  details,
                         statusError }) {
    
     const detailsData = details.data.attributes;
+
     const teas = details.included.filter((entry) => {
         return entry.type === "tea"
     });
 
-    const sortedTeas = teas.sort((a, b) => {
-        return a.attributes.title.toLowerCase().localeCompare(b.attributes.title.toLowerCase())
-    })
-
     const customers = details.included.filter((entry) => {
         return entry.type === "customer"
     });
+    
+    const sort = (list) => {
+        return list.sort((a, b) => {
 
-    const sortedCustomers = customers.sort((a, b) => {
-        return a.attributes.last_name.toLowerCase().localeCompare(b.attributes.last_name.toLowerCase())
-    })
+            let targetA = "";
+            let targetB = "";
+
+            if (a.type === "tea" && b.type === "tea") {
+                targetA = a.attributes.title;
+                targetB = b.attributes.title;
+            } else {
+                targetA = a.attributes.last_name;
+                targetB = b.attributes.last_name;
+            }
+
+            return targetA.toLowerCase().localeCompare(targetB.toLowerCase())
+        })
+    };
 
     return (
         <section className='details_container'>
@@ -39,8 +50,8 @@ function DetailsPage({  details,
                                 frequency={detailsData.frequency} />
             </div>
             <div className="teas_customers_container">
-                <TeasContainer teas={sortedTeas}/>
-                <CustomersContainer customers={sortedCustomers}/>
+                <TeasContainer teas={teas} sort={sort}/>
+                <CustomersContainer customers={customers} sort={sort}/>
             </div>
             <div className="nav-buttons">
                 <button className="goBack" onClick={() => handlePortalNav()}><img className="back_arrow" src={BackArrow} alt="Back Arrow" /><label>Go back</label></button>

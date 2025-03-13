@@ -1,9 +1,22 @@
 import './CustomersContainer.css';
+import { useState, useEffect } from 'react';
 import CustomerCard from '../customerCard/CustomerCard';
 
-function CustomersContainer({ customers }) {
+function CustomersContainer({ customers, sort }) {
+    const [displayedCustomers, setDisplayedCustomers ] = useState([]);
+        
+    useEffect(() => {
+        setDisplayedCustomers(customers);
+    }, [customers])
 
-    const customerCards = customers.map((customer) => {
+    const handleSort = () => {
+        console.log(displayedCustomers)
+        const sorted = sort([...displayedCustomers]);
+        console.log(sorted)
+        setDisplayedCustomers(sorted);
+    }
+
+    const customerCards = displayedCustomers.map((customer) => {
         return (
             <CustomerCard   key={customer.id}
                             id={customer.id}
@@ -17,6 +30,7 @@ function CustomersContainer({ customers }) {
     return (
         <section className='customer_card_container'>
             <h3>Subscribed Customers: </h3>
+            <button onClick={() => {handleSort()}}>sort</button>
             <div className="card-scroll">
                 {customerCards}
             </div>
