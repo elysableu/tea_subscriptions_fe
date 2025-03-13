@@ -16,3 +16,14 @@
     -moz-box-shadow: 0px 0px 159px 12px rgba(179,178,153,0.62);
     box-shadow: 0px 0px 159px 12px rgba(179,178,153,0.62);
 }
+
+.subscription_card_container img {
+    width: 4em;
+    padding: 0.5em;
+}
+
+.subscription_card_container h3 {
+    padding: 0.25em;
+    outline: 1px dashed var(--dark-green);
+    margin: 0.25em;
+}
