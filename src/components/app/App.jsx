@@ -52,13 +52,14 @@ function App() {
       body: JSON.stringify(newStatus),
     })
     .then(response => {
+      console.log(response)
       response.status === 400 ? setStatusError("Subscription is already canceled!") : setStatusError("");
       return response.json();
     })
     .then(data => {
       getSubscriptions()
       getSubscriptionDetails(id)
-      status === "canceled" ? setSuccessMessage("Subscription successfully canceled!") : setSuccessMessage("Subscription successfully reactivated!")
+      (status === "canceled" && response.status === 200 ) ? setSuccessMessage("Subscription successfully canceled!") : setSuccessMessage("Subscription successfully reactivated!")
     })
     .catch(error => {
       console.log(error.message);
@@ -67,9 +68,9 @@ function App() {
 
   const handleStatusChange = (status, id) => {
     // This is set up to handle future implementation of a reactivate behavior
-    if (status === "active" )
-      updateSubscriptionStatus("canceled", id);
-    else if (status === "canceled") {
+    if (status === "active" ) {
+      updateSubscriptionStatus("canceled", id); 
+    } else if (status === "canceled") {
       updateSubscriptionStatus("active", id);
     }
   }
