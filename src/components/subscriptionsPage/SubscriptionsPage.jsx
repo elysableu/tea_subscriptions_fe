@@ -33,7 +33,8 @@ function SubscriptionsPage({ subscriptions, getSubscriptionDetails, sortSubs }) 
                 price={subscription.attributes.price}
                 status={subscription.attributes.status}
                 frequency={subscription.attributes.frequency}
-                getSubscriptionDetails={getSubscriptionDetails}
+                getSubscriptionDetails=
+                {getSubscriptionDetails}
             />
         );
     })

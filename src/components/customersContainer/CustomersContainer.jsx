@@ -29,8 +29,10 @@ function CustomersContainer({ customers, sort }) {
 
     return (
         <section className='customer_card_container'>
-            <h3>Subscribed Customers: </h3>
-            <button onClick={() => {handleSort()}}>sort</button>
+            <div className="sort">
+                <h3>Subscribed Customers: </h3>
+                <button onClick={() => {handleSort()}}>sort</button>
+            </div>
             <div className="card-scroll">
                 {customerCards}
             </div>
