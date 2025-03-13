@@ -22,7 +22,7 @@ function DetailsPage({  details,
     const customers = details.included.filter((entry) => {
         return entry.type === "customer"
     });
-
+    console.log(successMessage)
     return (
         <section className='details_container'>
             <h2>{details.data.attributes.title}</h2>

@@ -59,7 +59,7 @@ function App() {
     .then(data => {
       getSubscriptions()
       getSubscriptionDetails(id)
-      (status === "canceled" && response.status === 200 ) ? setSuccessMessage("Subscription successfully canceled!") : setSuccessMessage("Subscription successfully reactivated!")
+      status === "canceled" ? setSuccessMessage("Subscription successfully canceled!") : setSuccessMessage("Subscription successfully reactivated!")
     })
     .catch(error => {
       console.log(error.message);
