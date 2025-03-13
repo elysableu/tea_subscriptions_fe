@@ -1,0 +1,15 @@
+.tea_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sage);
+    border-radius: 1em;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.head {
+    display: flex;
+    margin-right: 2em;
+}

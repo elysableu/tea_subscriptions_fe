@@ -1,0 +1,18 @@
+.customer_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sage);
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+.head{
+    display: flex;
+}
+
+.head img {
+    width: 2em;
+    margin: 1em;
+}
