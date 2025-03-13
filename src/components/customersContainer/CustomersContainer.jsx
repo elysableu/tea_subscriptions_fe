@@ -29,7 +29,7 @@ function CustomersContainer({ customers, sort }) {
 
     return (
         <section className='customer_card_container'>
-            <div className="sort">
+            <div className="sort_customers">
                 <h3>Subscribed Customers: </h3>
                 <button onClick={() => {handleSort()}}>sort</button>
             </div>

@@ -5,8 +5,32 @@
     max-height: 20em;
 }
 
+.sort_customers {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+}
+
 .customer_card_container h3 {
     margin-bottom: 0.5em;
+}
+
+.sort_customers button {
+    color: var(--powder-blue);
+    background-color: var(--amaranth-purple);
+    height: 2.25em;
+    margin-top: 0.5em;
+    position: absolute;
+    right: 0.5em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort_customers button:hover {
+    outline: 3px solid var(--powder-blue);
 }
 
 .card-scroll {

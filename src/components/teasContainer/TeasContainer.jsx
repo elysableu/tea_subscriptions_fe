@@ -27,7 +27,7 @@ function TeasContainer({ teas, sort }) {
     
     return (
         <section className='tea_card_container'>
-            <div className="sort">
+            <div className="sort_teas">
                 <h3>Teas: </h3>
                 <button onClick={() => {handleSort()}}>sort</button>
             </div>
