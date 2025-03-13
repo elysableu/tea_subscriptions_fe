@@ -11,7 +11,6 @@ function TeasContainer({ teas, sort }) {
 
     const handleSort = () => {
         const sorted = sort([...displayedTeas]);
-        console.log(sorted)
         setDisplayedTeas(sorted);
     }
 

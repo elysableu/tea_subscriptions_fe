@@ -79,6 +79,24 @@ function App() {
     navigate('/subscriptions')
   }
 
+  const handleSort = (list) => {
+    return [...list].sort((a, b) => {
+
+        let targetA = "";
+        let targetB = "";
+
+        if (a.type === "customer" && b.type === "customer") {
+            targetA = a.attributes.last_name;
+            targetB = b.attributes.last_name;
+        } else {
+            targetA = a.attributes.title;
+            targetB = b.attributes.title;
+        }
+
+        return targetA.toLowerCase().localeCompare(targetB.toLowerCase())
+    })
+};
+
   // Clear success and status messages after 3 seconds
   useEffect(() => {
     if (statusError) {
@@ -103,11 +121,12 @@ function App() {
           <Route path="/" 
                 element={<Homepage portalNav={ handlePortalNav } />} />
           <Route path="/subscriptions" 
-                element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} />} />
+                element={<SubscriptionsPage subscriptions={subscriptions} getSubscriptionDetails={getSubscriptionDetails} sortSubs={handleSort} />} />
           <Route path="/:subId" 
                 element={<DetailsPage details={details} 
                                       handleStatusChange={handleStatusChange} 
                                       handlePortalNav={handlePortalNav}
+                                      handleSort={handleSort}
                                       statusError={statusError}
                                       successMessage={successMessage}/>}/>
         </Routes>
